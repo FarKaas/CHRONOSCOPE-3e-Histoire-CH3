@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Histoire 3e — Th.1 — Ch.3 — La Seconde Guerre mondiale</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+:root {
+						--primary: #6366f1;
+						--secondary: #0ea5e9;
+						--success: #10b981;
+						--warning: #f59e0b;
+						--danger: #ef4444;
+						--info: #ec4899;
+						--purple: #413BDD;
+						--bilan: #64748b;
+						
+						--bg-white: #ffffff;
+						--bg-light: #f8fafc;
+						--text-dark: #1e293b;
+						--text-muted: #64748b;
+						--text-light: #ffffff;
+						
+						--spacing-sm: 12px;
+						--spacing-md: 16px;
+						--spacing-lg: 24px;
+						--spacing-xl: 32px;
+						
+						--radius-md: 12px;
+						--radius-lg: 16px;
+						
+						--shadow-sm: 0 2px 8px rgba(108, 92, 231, 0.08);
+						--shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+						
+						--gradient-primary: linear-gradient(100deg, var(--primary), #a5b4fc);
+						--gradient-secondary: linear-gradient(100deg, var(--secondary), #7dd3fc);
+						--gradient-success: linear-gradient(100deg, var(--success), #6ee7b7);
+						--gradient-warning: linear-gradient(100deg, var(--warning), #fbbf24);
+						--gradient-danger: linear-gradient(100deg, var(--danger), #f87171);
+						--gradient-info: linear-gradient(100deg, var(--info), #f472b6);
+						--gradient-carte: linear-gradient(100deg, var(--purple), #7490FF);
+						--gradient-bilan: linear-gradient(100deg, var(--bilan), #9EA9AD);
+						--gradient-carte-mentale: linear-gradient(100deg, #E9AC16, #fbbf24);
+					}
+					
+					[data-theme="dark"] {
+						--bg-light: #292929;
+						--bg-white: #3a3a3a;
+						--text-dark: #e8e8e8;
+						--text-muted: #b8b8b8;
+						--shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+						--shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+					}
+					
+					* { box-sizing: border-box; }
+					
+					body {
+						font-family: 'Roboto', Arial, sans-serif;
+						margin: 0;
+						padding-top: 80px;
+						background: var(--bg-light);
+						color: var(--text-dark);
+						transition: all 0.3s ease;
+					}
+					
+					/* Toolbar */
+					.toolbar {
+						position: fixed;
+						top: 0;
+						left: 0;
+						right: 0;
+						height: 80px;
+						background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+						border-bottom: 2px solid #e9ecef;
+						box-shadow: var(--shadow-md);
+						z-index: 1000;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						gap: 12px;
+						padding: 10px 20px;
+					}
+					
+					[data-theme="dark"] .toolbar {
+						background: linear-gradient(135deg, #2e2e2e 0%, #2e2e2e 100%);
+						border-bottom-color: #444444;
+					}
+					
+					.toolbar-btn {
+						color: white;
+						border: none;
+						padding: 12px 20px;
+						border-radius: 20px;
+						cursor: pointer;
+						font-size: 14px;
+						font-weight: 600;
+						transition: transform 0.2s ease;
+					}
+					
+					.toolbar-btn:hover { transform: translateY(-2px); }
+					
+					.btn-theme { background: linear-gradient(135deg, #74b9ff, #0984e3); }
+					.btn-print { background: linear-gradient(135deg, #4BC01B, #3A9415); }
+					.btn-font  { background: linear-gradient(135deg, #fd79a8, #e84393); }
+
+					/* Contenu principal */
+					.content {
+						max-width: 1200px;
+						margin: 20px auto;
+						padding: 30px;
+					}
+					
+					/* En-tÃªte */
+					.chapter-header {
+						text-align: center;
+						margin: 0 auto 40px;
+						padding: 25px;
+						background: linear-gradient(#E6834C, #7362EA);
+						color: white;
+						border-radius: 15px;
+						box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+					}
+					
+					.theme-title {
+						font-size: 20px;
+						font-weight: 400;
+						opacity: 0.9;
+						margin-bottom: 20px;
+					}
+					
+					.chapter-title {
+						margin: 12px 0;
+						font-size: 2em;
+						font-weight: 700;
+						line-height: 1.2;
+					}
+					
+					.chapter-number {
+						font-size: 20px;
+						font-weight: 500;
+						opacity: 0.9;
+						margin-top: 2px;
+					}
+					
+					/* Sections */
+					.section {
+						max-width: 1200px;
+						width: 100%;
+						margin: 0 auto var(--spacing-xl);
+						border-radius: var(--radius-lg);
+						overflow: hidden;
+						box-shadow: var(--shadow-md);
+					}
+					
+					.section-header {
+						display: flex;
+						align-items: center;
+						gap: var(--spacing-sm);
+						padding: var(--spacing-md) var(--spacing-lg);
+						font-size: 1.3em;
+						font-weight: 700;
+						color: var(--text-light);
+					}
+					
+					.section-badge {
+						background: rgba(255,255,255,0.25);
+						border: 2px solid rgba(255,255,255,0.35);
+						border-radius: 50%;
+						width: 28px;
+						height: 28px;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						font-weight: 700;
+						font-size: 14px;
+					}
+					
+					.cards-grid {
+						display: grid;
+						grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+						gap: var(--spacing-lg);
+						padding: var(--spacing-md) var(--spacing-lg) var(--spacing-lg);
+					}
+					
+					.card {
+						background: var(--bg-white);
+						border-radius: var(--radius-md);
+						padding: var(--spacing-lg) var(--spacing-xl);
+						box-shadow: var(--shadow-sm);
+						border: 2px solid;
+						transition: transform 0.3s ease, box-shadow 0.3s ease;
+					}
+					
+					.card:hover {
+						transform: translateY(-4px);
+						box-shadow: 0 8px 32px rgba(108, 92, 231, 0.15);
+					}
+					
+					.list-styled {
+						list-style: none;
+						padding-left: 10px;
+						margin: 0;
+					}
+					
+					.list-styled li {
+						position: relative;
+						margin: var(--spacing-md) 0;
+						line-height: 1.5;
+						font-size: 0.95em;
+						padding-left: 35px;
+					}
+					
+					.list-styled li::before {
+						content: '●';
+						position: absolute;
+						left: 0;
+						top: 0;
+						font-size: 1em;
+					}
+					
+					/* Styles spÃ©cifiques par section */
+					.problematique {
+						background: linear-gradient(180deg, #f1efff, #e8e5ff);
+						border-left: 5px solid var(--primary);
+					}
+					
+					[data-theme="dark"] .problematique {
+						background: linear-gradient(180deg, #3a3650, #2f2d45);
+					}
+					
+					.problematique .section-header {
+						background: var(--gradient-primary);
+					}
+					
+					.problematique-content {
+						padding: var(--spacing-md) var(--spacing-lg);
+						border-left: 4px solid var(--primary);
+					}
+					
+					.problematique-highlight-box {
+						background: var(--bg-white);
+						border: 2px solid var(--primary);
+						border-radius: var(--radius-md);
+						padding: var(--spacing-md);
+						box-shadow: var(--shadow-md);
+					}
+					
+					.problematique-highlight-box h4 {
+						font-size: 1.1em;
+						margin: 0 0 var(--spacing-sm);
+						color: var(--primary);
+						font-weight: 600;
+						text-transform: uppercase;
+					}
+					
+					.problematique .list-styled li::before {
+						content: '▶';
+						color: var(--primary);
+					}
+					
+					/* Plan */
+					.plan {
+						background: linear-gradient(180deg, #e6f3ff, #ddeeff);
+						border-left: 5px solid var(--secondary);
+					}
+					
+					[data-theme="dark"] .plan {
+						background: linear-gradient(180deg, #2e3950, #242945);
+					}
+					
+					.plan .section-header {
+						background: var(--gradient-secondary);
+					}
+					
+					.plan .card:nth-child(1) { border-color: #3b82f6; }
+					.plan .card:nth-child(2) { border-color: #27ae60; }
+					.plan .card:nth-child(3) { border-color: #8e44ad; }
+					.plan .card:nth-child(4) { border-color: #e74c3c; }
+					
+					.plan-card-header {
+						display: flex;
+						align-items: flex-start;
+						gap: var(--spacing-md);
+						margin-bottom: var(--spacing-sm);
+					}
+					
+					.plan-card-icon {
+						width: 28px;
+						height: 28px;
+						border-radius: 50%;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						font-weight: 800;
+						color: var(--text-light);
+						font-size: 1em;
+						box-shadow: var(--shadow-sm);
+						flex-shrink: 0;
+					}
+					
+					.plan .card:nth-child(1) .plan-card-icon { background: #3b82f6; }
+					.plan .card:nth-child(2) .plan-card-icon { background: #27ae60; }
+					.plan .card:nth-child(3) .plan-card-icon { background: #8e44ad; }
+					.plan .card:nth-child(4) .plan-card-icon { background: #e74c3c; }
+					
+					.plan .card:nth-child(1) h3 { color: #3b82f6; }
+					.plan .card:nth-child(2) h3 { color: #27ae60; }
+					.plan .card:nth-child(3) h3 { color: #8e44ad; }
+					.plan .card:nth-child(4) h3 { color: #e74c3c; }
+					
+					.plan-card-title {
+						font-size: 1.1em;
+						margin: 0;
+						line-height: 1.5;
+						font-weight: 600;
+						flex-grow: 1;
+					}
+					
+					/* CompÃ©tences */
+					.competences {
+						background: linear-gradient(180deg, #e6f6f0, #dff5ec);
+						border-left: 5px solid var(--success);
+					}
+					
+					[data-theme="dark"] .competences {
+						background: linear-gradient(180deg, #2e4f40, #243936);
+					}
+					
+					.competences .section-header {
+						background: var(--gradient-success);
+					}
+					
+					.competences .card {
+						border-color: var(--success);
+					}
+					
+					.competences-title {
+						font-weight: 600;
+						margin-bottom: var(--spacing-sm);
+						font-size: 1.1em;
+						color: var(--success);
+						text-transform: uppercase;
+					}
+					
+					[data-theme="dark"] .competences-title {
+						color: #6ee7b7;
+					}
+					
+					.competences .list-styled li::before {
+						color: var(--success);
+					}
+					
+					/* Vocabulaire */
+					.vocabulaire {
+						background: linear-gradient(180deg, #fef7ed, #fed7aa);
+						border-left: 5px solid var(--warning);
+					}
+					
+					[data-theme="dark"] .vocabulaire {
+						background: linear-gradient(180deg, #4d4230, #3d3628);
+					}
+					
+					.vocabulaire .section-header {
+						background: var(--gradient-warning);
+					}
+					
+					.vocabulaire .card {
+						border-color: var(--warning);
+					}
+					
+					.vocabulaire .list-styled li::before {
+						color: var(--warning);
+					}
+					
+					.vocab-term {
+						font-weight: 700;
+						color: var(--warning);
+						text-transform: uppercase;
+						display: inline;
+						margin-right: 8px;
+					}
+					
+					.vocab-definition {
+						font-weight: 400;
+						color: var(--text-dark);
+						text-transform: none;
+						display: inline;
+					}
+					
+					[data-theme="dark"] .vocab-term {
+						color: #fbbf24;
+					}
+					
+					[data-theme="dark"] .vocab-definition {
+						color: #ffffff;
+					}
+					
+					/* CatÃ©gories de vocabulaire */
+					.vocab-category-title {
+						font-weight: 700;
+						color: var(--warning);
+						font-size: 1.1em;
+						margin-bottom: var(--spacing-sm);
+						text-transform: uppercase;
+						text-align: center;
+						padding-bottom: 8px;
+					}
+					
+					[data-theme="dark"] .vocab-category-title {
+						color: #fbbf24;
+					}
+					
+					.vocabulaire .card:nth-child(1) { border-color: #3b82f6; }
+					.vocabulaire .card:nth-child(2) { border-color: #27ae60; }
+					.vocabulaire .card:nth-child(3) { border-color: #8e44ad; }
+					.vocabulaire .card:nth-child(4) { border-color: #e74c3c; }
+					.vocabulaire .card:nth-child(5) { border-color: #f39c12; }
+
+					.vocabulaire .card:nth-child(1) .vocab-category-title { color: #3b82f6; }
+					.vocabulaire .card:nth-child(2) .vocab-category-title { color: #27ae60; }
+					.vocabulaire .card:nth-child(3) .vocab-category-title { color: #8e44ad; }
+					.vocabulaire .card:nth-child(4) .vocab-category-title { color: #e74c3c; }
+					.vocabulaire .card:nth-child(5) .vocab-category-title { color: #f39c12; }
+
+					.vocabulaire .card:nth-child(1) .vocab-term { color: #3b82f6; }
+					.vocabulaire .card:nth-child(2) .vocab-term { color: #27ae60; }
+					.vocabulaire .card:nth-child(3) .vocab-term { color: #8e44ad; }
+					.vocabulaire .card:nth-child(4) .vocab-term { color: #e74c3c; }
+					.vocabulaire .card:nth-child(5) .vocab-term { color: #f39c12; }
+
+					.vocabulaire .card:nth-child(1) .list-styled li::before { color: #3b82f6; }
+					.vocabulaire .card:nth-child(2) .list-styled li::before { color: #27ae60; }
+					.vocabulaire .card:nth-child(3) .list-styled li::before { color: #8e44ad; }
+					.vocabulaire .card:nth-child(4) .list-styled li::before { color: #e74c3c; }
+					.vocabulaire .card:nth-child(5) .list-styled li::before { color: #f39c12; }
+
+					/* Onglets vocabulaire â€” pilules */
+					.vocab-tabs {
+						display: flex;
+						gap: 10px;
+						padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-sm);
+						background: transparent;
+					}
+
+					.vocab-tab-btn {
+						padding: 10px 28px;
+						border: none;
+						border-radius: 999px;
+						background: rgba(245, 158, 11, 0.18);
+						color: var(--warning);
+						font-weight: 600;
+						font-size: 0.92em;
+						cursor: pointer;
+						transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
+						font-family: 'Roboto', Arial, sans-serif;
+						letter-spacing: 0.02em;
+						box-shadow: 0 2px 6px rgba(245, 158, 11, 0.15);
+					}
+
+					.vocab-tab-btn:hover:not(.active) {
+						background: rgba(245, 158, 11, 0.30);
+						box-shadow: 0 3px 10px rgba(245, 158, 11, 0.25);
+						transform: translateY(-1px);
+					}
+
+					.vocab-tab-btn.active {
+						background: var(--gradient-warning);
+						color: white;
+						box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4);
+						transform: translateY(-1px);
+					}
+
+					[data-theme="dark"] .vocab-tab-btn {
+						background: rgba(251, 191, 36, 0.18);
+						color: #fbbf24;
+						box-shadow: 0 2px 6px rgba(251, 191, 36, 0.12);
+					}
+
+					[data-theme="dark"] .vocab-tab-btn:hover:not(.active) {
+						background: rgba(251, 191, 36, 0.30);
+						box-shadow: 0 3px 10px rgba(251, 191, 36, 0.22);
+					}
+
+					[data-theme="dark"] .vocab-tab-btn.active {
+						background: linear-gradient(100deg, #f59e0b, #fbbf24);
+						color: #1e293b;
+						box-shadow: 0 4px 14px rgba(251, 191, 36, 0.35);
+					}
+
+					.vocab-tab-content {
+						display: none;
+					}
+
+					.vocab-tab-content.active {
+						display: block;
+					}
+
+					/* Couleurs cartes vocab par parties (identiques au plan) */
+					#vocab-parties-grid .card:nth-child(1) { border-color: #3b82f6; }
+					#vocab-parties-grid .card:nth-child(2) { border-color: #27ae60; }
+					#vocab-parties-grid .card:nth-child(3) { border-color: #8e44ad; }
+					#vocab-parties-grid .card:nth-child(4) { border-color: #e74c3c; }
+
+					#vocab-parties-grid .card:nth-child(1) .vocab-category-title { color: #3b82f6; }
+					#vocab-parties-grid .card:nth-child(2) .vocab-category-title { color: #27ae60; }
+					#vocab-parties-grid .card:nth-child(3) .vocab-category-title { color: #8e44ad; }
+					#vocab-parties-grid .card:nth-child(4) .vocab-category-title { color: #e74c3c; }
+
+					#vocab-parties-grid .card:nth-child(1) .vocab-term { color: #3b82f6; }
+					#vocab-parties-grid .card:nth-child(2) .vocab-term { color: #27ae60; }
+					#vocab-parties-grid .card:nth-child(3) .vocab-term { color: #8e44ad; }
+					#vocab-parties-grid .card:nth-child(4) .vocab-term { color: #e74c3c; }
+
+					#vocab-parties-grid .card:nth-child(1) .list-styled li::before { color: #3b82f6; }
+					#vocab-parties-grid .card:nth-child(2) .list-styled li::before { color: #27ae60; }
+					#vocab-parties-grid .card:nth-child(3) .list-styled li::before { color: #8e44ad; }
+					#vocab-parties-grid .card:nth-child(4) .list-styled li::before { color: #e74c3c; }
+
+					/* Dates */
+					.dates {
+						background: linear-gradient(180deg, #ffe8e8, #ffd6d6);
+						border-left: 5px solid var(--danger);
+					}
+					
+					[data-theme="dark"] .dates {
+						background: linear-gradient(180deg, #4d3030, #3d2828);
+					}
+					
+					.dates .section-header {
+						background: var(--gradient-danger);
+					}
+					
+					.dates-content {
+						padding: var(--spacing-md) var(--spacing-lg);
+					}
+					
+					.dates-highlight-box {
+						background: var(--bg-white);
+						border: 2px solid var(--danger);
+						border-radius: var(--radius-md);
+						padding: var(--spacing-md);
+						margin-bottom: var(--spacing-md);
+						box-shadow: var(--shadow-md);
+					}
+					
+					.dates-highlight-box h4 {
+						font-size: 1.1em;
+						margin: 0 0 var(--spacing-sm);
+						color: var(--danger);
+						font-weight: 600;
+						text-transform: uppercase;
+					}
+					
+					.dates .list-styled li {
+						display: flex;
+						align-items: flex-start;
+						gap: var(--spacing-sm);
+						margin: var(--spacing-sm) 0;
+						padding-left: 0;
+					}
+					
+					.dates .list-styled li::before {
+						content: none;
+					}
+					
+					.date-major {
+						font-weight: 700;
+						color: var(--danger);
+						min-width: 80px;
+						flex-shrink: 0;
+					}
+					
+					.date-event {
+						color: var(--text-dark);
+						line-height: 1.4;
+					}
+					
+					/* Personnages */
+					.personnages {
+						background: linear-gradient(180deg, #ffe6f0, #ffcce0);
+						border-left: 5px solid var(--info);
+					}
+					
+					[data-theme="dark"] .personnages {
+						background: linear-gradient(180deg, #4d3040, #3d2836);
+					}
+					
+					.personnages .section-header {
+						background: var(--gradient-info);
+					}
+					
+					.personnages .card {
+						border-color: var(--info);
+					}
+					
+					.personnages-title {
+						font-weight: 600;
+						margin-bottom: var(--spacing-sm);
+						font-size: 1.1em;
+						color: var(--info);
+						text-transform: uppercase;
+					}
+					
+					[data-theme="dark"] .personnages-title {
+						color: #f472b6;
+					}
+					
+					.personnages-dates {
+						font-style: italic;
+						color: #5a6571;
+						margin-bottom: 8px;
+						font-size: 0.9em;
+					}
+					
+					[data-theme="dark"] .personnages-dates {
+						color: #b8b8b8;
+					}
+					
+					/* Carte */
+					.carte {
+						background: linear-gradient(180deg, #e8eaf6, #c5cae9);
+						border-left: 5px solid var(--purple);
+					}
+					
+					[data-theme="dark"] .carte {
+						background: linear-gradient(180deg, #24263E, #1e2035);
+					}
+					
+					.carte .section-header {
+						background: var(--gradient-carte);
+					}
+					
+					.carte-content {
+						padding: var(--spacing-md) var(--spacing-lg) var(--spacing-lg);
+					}
+					
+					.carte-content h4 {
+						color: var(--purple);
+						font-size: 1.2em;
+						margin-bottom: var(--spacing-md);
+						font-weight: 600;
+					}
+					
+					.carte-map-placeholder {
+						background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+						border: 2px dashed var(--purple);
+						border-radius: var(--radius-md);
+						padding: var(--spacing-xl);
+						text-align: center;
+						margin: var(--spacing-lg) 0;
+					}
+					
+					[data-theme="dark"] .carte-map-placeholder {
+						background: linear-gradient(135deg, #3a3a3a, #2a2a2a);
+					}
+					
+					.carte-map-icon {
+						font-size: 3em;
+						margin-bottom: var(--spacing-sm);
+						opacity: 0.8;
+					}
+					
+					.carte-legend-grid {
+						display: grid;
+						grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+						gap: 14px;
+						margin-top: 20px;
+					}
+					
+					.carte-legend-item {
+						display: flex;
+						align-items: center;
+						gap: 14px;
+						font-size: 0.9em;
+						padding: 14px;
+						background: var(--bg-white);
+						border: 1px solid #e9ecef;
+						border-radius: 8px;
+					}
+					
+					[data-theme="dark"] .carte-legend-item {
+						border-color: #444444;
+					}
+					
+					.carte-legend-color {
+						width: 24px;
+						height: 24px;
+						border-radius: 4px;
+						flex-shrink: 0;
+						border: 1px solid rgba(0,0,0,0.1);
+					}
+					
+					/* Bilan */
+					.bilan {
+						background: linear-gradient(180deg, #eceff1, #cfd8dc);
+						border-left: 5px solid var(--bilan);
+					}
+					
+					[data-theme="dark"] .bilan {
+						background: linear-gradient(180deg, #3a3d40, #2f3235);
+					}
+					
+					.bilan .section-header {
+						background: var(--gradient-bilan);
+					}
+					
+					.bilan-content {
+						padding: var(--spacing-md) var(--spacing-lg) var(--spacing-lg);
+					}
+					
+					.bilan-highlight-box {
+						background: var(--bg-white);
+						border: 2px solid var(--bilan);
+						border-radius: var(--radius-md);
+						padding: var(--spacing-md);
+						margin-top: var(--spacing-lg);
+						box-shadow: var(--shadow-sm);
+					}
+					
+					.bilan-highlight-box h4 {
+						margin: 0 0 var(--spacing-sm) 0;
+						color: var(--bilan);
+						font-weight: 600;
+						font-size: 1em;
+					}
+					
+					.bilan-highlight-box h5 {
+						margin: var(--spacing-md) 0 var(--spacing-sm) 0;
+						color: var(--bilan);
+						font-weight: 600;
+						font-size: 1em;
+						text-transform: uppercase;
+					}
+					
+					/* Carte mentale */
+					.carte-mentale {
+						background: linear-gradient(180deg, #fefce8, #fef3c7);
+						border-left: 5px solid #E9AC16;
+					}
+					
+					[data-theme="dark"] .carte-mentale {
+						background: linear-gradient(180deg, #453f2e, #3a341f);
+					}
+					
+					.carte-mentale .section-header {
+						background: var(--gradient-carte-mentale);
+					}
+					
+					.carte-mentale-content {
+						padding: var(--spacing-md) var(--spacing-lg) var(--spacing-lg);
+					}
+					
+					.carte-mentale-content h4 {
+						color: #E9AC16;
+						font-size: 1.2em;
+						margin-bottom: var(--spacing-md);
+						font-weight: 600;
+					}
+					
+					.carte-mentale-placeholder {
+						background: linear-gradient(135deg, #fefce8, #fef3c7);
+						border: 2px dashed #E9AC16;
+						border-radius: var(--radius-md);
+						padding: var(--spacing-xl);
+						text-align: center;
+						margin: var(--spacing-lg) 0;
+						min-height: 200px;
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+					}
+					
+					[data-theme="dark"] .carte-mentale-placeholder {
+						background: linear-gradient(135deg, #3a3a3a, #2a2a2a);
+					}
+					
+					.carte-mentale-icon {
+						font-size: 3em;
+						margin-bottom: var(--spacing-sm);
+						opacity: 0.8;
+						color: #E9AC16;
+					}
+					
+					.carte-mentale-subtitle {
+						color: #ca8a04;
+						font-style: italic;
+						margin-top: var(--spacing-sm);
+						font-size: 0.9em;
+					}
+					
+					[data-theme="dark"] .carte-mentale-subtitle {
+						color: #fbbf24;
+					}
+					
+					.carte-mentale-concepts {
+						display: grid;
+						grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+						gap: var(--spacing-md);
+						margin-top: var(--spacing-lg);
+					}
+					
+					.concept-item {
+						background: var(--bg-white);
+						padding: var(--spacing-md);
+						border-radius: var(--radius-md);
+						border-left: 4px solid #E9AC16;
+						box-shadow: var(--shadow-sm);
+						transition: transform 0.3s ease, box-shadow 0.3s ease;
+					}
+					
+					.concept-item:hover {
+						transform: translateY(-2px);
+						box-shadow: 0 8px 32px rgba(233, 172, 22, 0.15);
+					}
+					
+					.concept-title {
+						font-weight: 600;
+						color: #E9AC16;
+						margin-bottom: var(--spacing-sm);
+						font-size: 0.9em;
+						text-transform: uppercase;
+					}
+					
+					[data-theme="dark"] .concept-title {
+						color: #fbbf24;
+					}
+					
+					.concept-description {
+						font-size: 0.85em;
+						color: var(--text-muted);
+						line-height: 1.4;
+					}
+					
+					[data-theme="dark"] .concept-description {
+						color: #b0b0b0;
+					}
+					
+					/* Responsive */
+					@media (max-width: 768px) {
+						.content {
+							padding: var(--spacing-md);
+							margin: 15px;
+						}
+						
+						.cards-grid {
+							grid-template-columns: 1fr;
+							gap: var(--spacing-md);
+						}
+						
+						.card {
+							padding: var(--spacing-md) var(--spacing-lg);
+						}
+						
+						.section-header {
+							font-size: 1.1em;
+							padding: var(--spacing-sm) var(--spacing-md);
+						}
+						
+						.chapter-title {
+							font-size: 1.5em;
+						}
+					}
+					
+					@media (max-width: 480px) {
+						body { padding-top: 70px; }
+						
+						.toolbar {
+							height: 70px;
+							padding: 8px 12px;
+							gap: 8px;
+						}
+						
+						.toolbar-btn {
+							padding: 8px 12px;
+							font-size: 12px;
+						}
+						
+						.content {
+							margin: 10px;
+							padding: 15px;
+						}
+					}
+					
+					/* =====================================================
+					   IMPRESSION â€” version optimisÃ©e
+					   Fonds blancs, encre minimale, pagination propre
+					   ===================================================== */
+					@media print {
+
+						/* Masquer les Ã©lÃ©ments inutiles */
+						.toolbar,
+						.vocab-tabs { display: none !important; }
+
+						/* Forcer les deux onglets vocab visibles */
+						.vocab-tab-content { display: block !important; }
+						#vocab-tab-parties { margin-top: 12pt; }
+
+						/* Reset global */
+						*, *::before, *::after {
+							-webkit-print-color-adjust: exact;
+							print-color-adjust: exact;
+							box-shadow: none !important;
+							text-shadow: none !important;
+						}
+
+						body {
+							background: white !important;
+							color: #000 !important;
+							padding-top: 0 !important;
+							font-size: 10pt !important;
+							font-family: 'Georgia', serif !important;
+							margin: 0 !important;
+						}
+
+						.content {
+							max-width: 100% !important;
+							margin: 0 !important;
+							padding: 0 !important;
+						}
+
+						/* En-tÃªte : dÃ©gradÃ© conservÃ© mais allÃ©gÃ© */
+						.chapter-header {
+							background: #f0f0f0 !important;
+							color: #000 !important;
+							border: 1.5pt solid #999 !important;
+							border-radius: 6pt !important;
+							padding: 12pt !important;
+							margin-bottom: 14pt !important;
+							page-break-after: avoid;
+						}
+
+						.theme-title { color: #333 !important; }
+						.chapter-number { color: #555 !important; }
+
+						/* Sections : fonds blancs, bordure gauche fine colorÃ©e conservÃ©e */
+						.section {
+							background: white !important;
+							border-left-width: 3pt !important;
+							border-radius: 0 !important;
+							margin-bottom: 14pt !important;
+							padding: 0 !important;
+							page-break-inside: avoid;
+						}
+
+						/* Forcer les couleurs de bordure des sections Ã  s'imprimer */
+						.problematique { border-left-color: var(--primary) !important; }
+						.plan          { border-left-color: var(--success) !important; }
+						.competences   { border-left-color: var(--info) !important; }
+						.vocabulaire   { border-left-color: var(--warning) !important; }
+						.dates         { border-left-color: var(--danger) !important; }
+						.personnages   { border-left-color: var(--secondary) !important; }
+						.bilan         { border-left-color: var(--primary) !important; }
+
+						/* En-tÃªtes de section */
+						.section-header {
+							background: #e8e8e8 !important;
+							color: #000 !important;
+							font-size: 11pt !important;
+							padding: 5pt 10pt !important;
+							border-radius: 0 !important;
+							page-break-after: avoid;
+						}
+
+						.section-badge {
+							background: #555 !important;
+							color: white !important;
+						}
+
+						/* Cartes */
+						.card {
+							background: white !important;
+							border: 0.75pt solid #ccc !important;
+							border-radius: 4pt !important;
+							padding: 8pt 10pt !important;
+							page-break-inside: avoid;
+						}
+
+						/* Grille : 2 colonnes en print */
+						.cards-grid {
+							display: grid !important;
+							grid-template-columns: 1fr 1fr !important;
+							gap: 8pt !important;
+						}
+
+						/* Titres dans les cartes */
+						.plan-card-icon {
+							background: #555 !important;
+							color: white !important;
+						}
+
+						.vocab-category-title,
+						.competences-title,
+						.personnages-title {
+							color: #000 !important;
+							border-bottom: 0.5pt solid #ccc;
+							padding-bottom: 3pt;
+							margin-bottom: 5pt;
+						}
+
+						.vocab-term { color: #000 !important; font-weight: 700 !important; }
+						.vocab-definition { color: #333 !important; }
+						.date-major { color: #000 !important; font-weight: 700 !important; }
+						.date-event { color: #333 !important; }
+						.personnages-dates { color: #555 !important; }
+
+						/* Dates clÃ©s */
+						.dates-highlight-box {
+							background: #f5f5f5 !important;
+							border: 0.5pt solid #ccc !important;
+							border-radius: 3pt !important;
+							page-break-inside: avoid;
+						}
+
+						/* ProblÃ©matique */
+						.problematique-highlight-box {
+							background: #f5f5f5 !important;
+							border: 0.5pt solid #ccc !important;
+						}
+
+						/* Bilan */
+						.bilan-aspect {
+							background: #f5f5f5 !important;
+							border: 0.5pt solid #ccc !important;
+							page-break-inside: avoid;
+						}
+
+						/* Images carte / carte mentale */
+						.carte-image,
+						.carte-mentale-image {
+							max-width: 100% !important;
+							page-break-inside: avoid;
+						}
+
+						/* Pagination */
+						.section.plan,
+						.section.personnages,
+						.section.carte,
+						.section.bilan,
+						.section.carte-mentale {
+							page-break-before: auto;
+						}
+
+						/* Listes */
+						.list-styled li::before { color: #555 !important; }
+
+						/* Supprimer les animations */
+						* { transition: none !important; animation: none !important; }
+					}
+					
+					/* Notification simple */
+					.notification {
+						position: fixed;
+						top: 20px;
+						right: 20px;
+						z-index: 10000;
+						background: #74b9ff;
+						color: white;
+						padding: 15px 20px;
+						border-radius: 10px;
+						box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+						animation: slideIn 0.3s ease-out;
+					}
+					
+					.notification.success { background: #00b894; }
+					.notification.error { background: #d63031; }
+					
+					@keyframes slideIn {
+						from { opacity: 0; transform: translateX(300px); }
+						to { opacity: 1; transform: translateX(0); }
+					}
+  </style>
+</head>
+<body>
+
+<div class="toolbar">
+  <button class="toolbar-btn btn-theme" onclick="toggleTheme()">🌙 Sombre</button>
+  <button class="toolbar-btn btn-font"  onclick="changeFontSize()">🔠 Taille</button>
+  <button class="toolbar-btn btn-print" onclick="window.print()">🖨️ Imprimer</button>
+</div>
+
+<div class="content">
+
+  <header class="chapter-header">
+    <div class="theme-title">HISTOIRE 3ᵉ — THÈME 1 — L’EUROPE, UN THÉÂTRE MAJEUR DES GUERRES TOTALES (1914–1945)</div>
+    <h1 class="chapter-title">LA SECONDE GUERRE MONDIALE</h1>
+    <div class="chapter-number">Histoire 3ᵉ — Thème 1 — Chapitre 3</div>
+  </header>
+
+  <section class="section problematique">
+    <div class="section-header"><div class="section-badge">1</div><span>💡 PROBLÉMATIQUE</span></div>
+    <div class="problematique-content"><div class="problematique-highlight-box">
+      <h4>🤔 QUESTION CENTRALE</h4>
+      <ul class="list-styled"><li><em><strong>En quoi la Seconde Guerre mondiale (1939–1945) est-elle à la fois une guerre mondiale, une guerre totale et d’anéantissement, et le théâtre d’un génocide sans précédent ?</strong></em></li></ul>
+    </div></div>
+  </section>
+
+  <section class="section plan">
+    <div class="section-header"><div class="section-badge">2</div><span>📋 PLAN DU CHAPITRE</span></div>
+    <div class="cards-grid" id="plan-cards-grid"></div>
+  </section>
+
+  <section class="section competences">
+    <div class="section-header"><div class="section-badge">3</div><span>🎯 COMPÉTENCES</span></div>
+    <div class="cards-grid" id="competences-grid"></div>
+  </section>
+
+  <section class="section vocabulaire">
+    <div class="section-header"><div class="section-badge">4</div><span>📚 VOCABULAIRE</span></div>
+    <div class="vocab-tabs">
+      <button class="vocab-tab-btn active" onclick="switchVocabTab('thematique', this)">🗂️ Par thème</button>
+      <button class="vocab-tab-btn" onclick="switchVocabTab('parties', this)">📋 Par partie</button>
+    </div>
+    <div id="vocab-tab-thematique" class="vocab-tab-content active"><div class="cards-grid" id="vocab-thematique-grid"></div></div>
+    <div id="vocab-tab-parties" class="vocab-tab-content"><div class="cards-grid" id="vocab-parties-grid"></div></div>
+  </section>
+
+  <section class="section dates">
+    <div class="section-header"><div class="section-badge">5</div><span>📅 DATES CLÉS</span></div>
+    <div class="dates-content" id="dates-content"></div>
+  </section>
+
+  <section class="section personnages">
+    <div class="section-header"><div class="section-badge">6</div><span>👑 PERSONNAGES HISTORIQUES</span></div>
+    <div class="cards-grid" id="personnages-grid"></div>
+  </section>
+
+  <section class="section carte">
+    <div class="section-header"><div class="section-badge">7</div><span>🗺️ CARTE DE SYNTHÈSE</span></div>
+    <div class="carte-content">
+      <h4>L’Europe et le monde pendant la Seconde Guerre mondiale (1939–1945)</h4>
+      <div class="carte-map-placeholder" style="text-align:center;"><img src="[URL_IMAGE_CARTE]" alt="Carte SGM" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:0 auto;"></div>
+      <p><strong>Source :</strong> [À compléter]</p>
+    </div>
+  </section>
+
+  <section class="section bilan">
+    <div class="section-header"><div class="section-badge">8</div><span>📝 BILAN</span></div>
+    <div class="bilan-content"><div class="bilan-highlight-box">
+      <h4>Synthèse générale</h4>
+      <div id="bilan-aspects"></div>
+    </div></div>
+  </section>
+
+  <section class="section carte-mentale">
+    <div class="section-header"><div class="section-badge">9</div><span>🧠 CARTE MENTALE</span></div>
+    <div class="carte-mentale-content">
+      <h4>La Seconde Guerre mondiale — carte mentale de synthèse</h4>
+      <div class="carte-mentale-placeholder" style="text-align:center;"><img src="[URL_IMAGE_CARTE_MENTALE]" alt="Carte mentale SGM" style="max-width:100%;height:auto;border-radius:8px;display:block;margin:0 auto;"></div>
+      <p><strong>Source :</strong> [À compléter]</p>
+    </div>
+  </section>
+
+</div>
+
+<script>
+
+const NB_PARTIES = 3;
+
+const PARTIES = [
+  {
+    roman: "I",
+    titre: "Une guerre mondiale (1939\u20131945)",
+    description: "De la conqu\u00eate de la Pologne par la Wehrmacht (sept.\u00a01939) aux victoires de l\u2019Axe en Europe et dans le Pacifique, puis \u00e0 la mondialisation du conflit apr\u00e8s l\u2019entr\u00e9e en guerre de l\u2019URSS et des \u00c9tats-Unis (1941). Le tournant de 1942\u20131943 (Stalingrad, El-Alamein, Midway) renverse le rapport de force. Les Alli\u00e9s d\u00e9barquent en Normandie (juin 1944) et lib\u00e8rent l\u2019Europe. L\u2019Allemagne capitule le 8\u00a0mai\u00a01945, le Japon le 2\u00a0septembre\u00a01945 apr\u00e8s les bombes atomiques d\u2019Hiroshima et Nagasaki.",
+    bilan_titre: "Un conflit plan\u00e9taire en cinq phases",
+    bilan_texte: "Les victoires fulgurantes de l\u2019Axe (1939\u20131941) gr\u00e2ce \u00e0 la Blitzkrieg c\u00e8dent la place \u00e0 un retournement progressif. L\u2019entr\u00e9e de l\u2019URSS et des \u00c9tats-Unis en 1941 mondialise le conflit. Le tournant de 1942\u20131943 (Stalingrad, El-Alamein, Midway) consacre la sup\u00e9riorit\u00e9 alli\u00e9e. Les d\u00e9barquements de 1943\u20131944 lib\u00e8rent l\u2019Europe. La bombe atomique sur Hiroshima (6\u00a0ao\u00fbt\u00a01945) et Nagasaki (9\u00a0ao\u00fbt\u00a01945) provoque la capitulation japonaise (2\u00a0sept.\u00a01945)."
+  },
+  {
+    roman: "II",
+    titre: "Une guerre totale et d\u2019an\u00e9antissement",
+    description: "La SGM mobilise l\u2019ensemble des ressources humaines (87\u00a0millions de soldats), \u00e9conomiques (\u00e9conomie de guerre) et technologiques (radar, V1/V2, bombe atomique) des bellig\u00e9rants. Elle se caract\u00e9rise par une violence id\u00e9ologique extr\u00eame\u00a0: massacres de soldats et de prisonniers, bombardements de villes civiles (Dresde, Tokyo, Hiroshima), si\u00e8ges meurtriers (Leningrad, Stalingrad), exactions contre les populations occup\u00e9es (Oradour, Nankin).",
+    bilan_titre: "Une mobilisation totale et une violence sans pr\u00e9c\u00e9dent",
+    bilan_texte: "25\u00a0millions de soldats et 40 \u00e0 55\u00a0millions de civils sont tu\u00e9s. La SGM est une guerre totale (mobilisation de toute la soci\u00e9t\u00e9) et id\u00e9ologique (chaque camp justifie sa violence par son id\u00e9ologie). L\u2019innovation technologique (bombe atomique, missiles V2) marque un seuil dans la capacit\u00e9 de destruction. Les civils, d\u00e9lib\u00e9r\u00e9ment cibl\u00e9s, paient le tribut le plus lourd."
+  },
+  {
+    roman: "III",
+    titre: "Le g\u00e9nocide des Juifs et des Tziganes",
+    description: "Mise en \u0153uvre progressive de la \u00ab\u00a0Solution finale\u00a0\u00bb\u00a0: ghettos en Pologne occup\u00e9e (d\u00e8s 1939), Shoah par balles des Einsatzgruppen en URSS (1941, 1,5\u00a0million de victimes), conf\u00e9rence de Wannsee (janv.\u00a01942), d\u00e9portations massives vers les camps d\u2019extermination (Auschwitz-Birkenau, Treblinka, Sobibor\u2026). Bilan\u00a0: 6\u00a0millions de Juifs et 250\u00a0000\u00a0Tziganes assassin\u00e9s. Jugement des responsables au proc\u00e8s de Nuremberg (1945\u20131946).",
+    bilan_titre: "Un g\u00e9nocide industriel et planifi\u00e9",
+    bilan_texte: "La Shoah est un crime sans pr\u00e9c\u00e9dent\u00a0: planifi\u00e9 au sommet de l\u2019\u00c9tat nazi, organis\u00e9 \u00e0 l\u2019\u00e9chelle du continent, industrialis\u00e9 dans les camps d\u2019extermination. 6\u00a0millions de Juifs (les 2/3 des Juifs d\u2019Europe) et 250\u00a0000\u00a0Tziganes sont assassin\u00e9s. Le proc\u00e8s de Nuremberg (1945\u20131946) fonde en droit international les notions de crime contre l\u2019humanit\u00e9 et de g\u00e9nocide."
+  }
+];
+
+const PLAN_COLORS = ["#3b82f6", "#27ae60", "#8e44ad"];
+
+const COMPETENCES = [
+  {
+    emoji: "\u23f3",
+    titre: "SE REP\u00c9RER DANS LE TEMPS",
+    items: [
+      "Situer les grandes phases de la SGM sur une frise chronologique (1939\u20131945)",
+      "M\u00e9moriser les dates cl\u00e9s\u00a0: 1er sept. 1939, 22 juin 1941, 7 d\u00e9c. 1941, 2 f\u00e9vr. 1943, 6 juin 1944, 8 mai 1945, 2 sept. 1945",
+      "Comprendre comment le rapport de force bascule entre 1941 et 1943"
+    ]
+  },
+  {
+    emoji: "🗺",
+    titre: "SE REP\u00c9RER DANS L\u2019ESPACE",
+    items: [
+      "Localiser les principaux fronts\u00a0: Europe de l\u2019Ouest, Front de l\u2019Est, Pacifique, Afrique du Nord",
+      "Identifier les zones contr\u00f4l\u00e9es par l\u2019Axe \u00e0 son apog\u00e9e (1942)",
+      "Rep\u00e9rer les camps d\u2019extermination sur une carte de l\u2019Europe nazie"
+    ]
+  },
+  {
+    emoji: "🔍",
+    titre: "ANALYSER ET COMPRENDRE UN DOCUMENT",
+    items: [
+      "Extraire des informations d\u2019un t\u00e9moignage (Primo Levi, Edith Gricman, soldats de Stalingrad)",
+      "Confronter des documents d\u2019\u00e9poque (ordre militaire, t\u00e9moignage de victime) pour comprendre la guerre d\u2019an\u00e9antissement",
+      "Analyser une affiche de propagande (contexte, message, public vis\u00e9)"
+    ]
+  },
+  {
+    emoji: "💭",
+    titre: "RAISONNER, ARGUMENTER, JUSTIFIER",
+    items: [
+      "Expliquer pourquoi la SGM est qualifi\u00e9e de guerre \u00ab totale \u00bb et \u00ab d\u2019an\u00e9antissement \u00bb",
+      "Distinguer crime de guerre, crime contre l\u2019humanit\u00e9 et g\u00e9nocide",
+      "Montrer le lien entre id\u00e9ologie nazie et mise en \u0153uvre de la Shoah"
+    ]
+  }
+];
+
+const VOCAB_THEMATIQUE = [
+  {
+    emoji: "\u2694",
+    categorie: "Strat\u00e9gie militaire",
+    termes: [
+      { terme: "Blitzkrieg", definition: "\u00ab\u00a0Guerre \u00e9clair\u00a0\u00bb \u2014 strat\u00e9gie allemande combinant chars (Panzers), aviation (Luftwaffe) et infanterie pour percer rapidement les lignes ennemies." },
+      { terme: "Luftwaffe", definition: "Force a\u00e9rienne de l\u2019Allemagne nazie, cl\u00e9 de la Blitzkrieg et du \u00ab\u00a0Blitz\u00a0\u00bb contre les villes britanniques (1940\u20131941)." },
+      { terme: "Wehrmacht", definition: "Arm\u00e9es r\u00e9guli\u00e8res de l\u2019Allemagne nazie (terre, air, mer) pendant la SGM." },
+      { terme: "Panzer", definition: "Char blind\u00e9 allemand, fer de lance de la Blitzkrieg pour percer les fronts ennemis." },
+      { terme: "D\u00e9barquement", definition: "Op\u00e9ration amphibie d\u00e9posant des troupes sur un rivage tenu par l\u2019ennemi (Normandie, 6\u00a0juin\u00a01944\u00a0; Provence, 15\u00a0ao\u00fbt\u00a01944)." },
+      { terme: "Op\u00e9ration Barbarossa", definition: "Nom de code de l\u2019invasion de l\u2019URSS par l\u2019Allemagne (22\u00a0juin\u00a01941), en violation du pacte germano-sovi\u00e9tique." }
+    ]
+  },
+  {
+    emoji: "🏭",
+    categorie: "Guerre totale",
+    termes: [
+      { terme: "Guerre totale", definition: "Conflit mobilisant l\u2019ensemble des ressources humaines, \u00e9conomiques et technologiques d\u2019un \u00c9tat au service de l\u2019effort de guerre." },
+      { terme: "\u00c9conomie de guerre", definition: "Reconversion de l\u2019industrie civile vers la production massive d\u2019armements (chars, avions, navires, munitions, bombe atomique)." },
+      { terme: "Propagande", definition: "Techniques de communication visant \u00e0 mobiliser les populations, justifier la guerre et d\u00e9shumaniser l\u2019ennemi." },
+      { terme: "STO", definition: "Service du Travail Obligatoire \u2014 r\u00e9quisition forc\u00e9e de travailleurs fran\u00e7ais par l\u2019Allemagne nazie (1942\u20131944)\u00a0; 600\u00a0000 \u00e0 650\u00a0000\u00a0personnes concern\u00e9es." },
+      { terme: "Partisans", definition: "Combattants civils r\u00e9sistant \u00e0 l\u2019occupation ennemie dans des zones rurales, notamment en URSS." },
+      { terme: "Volksturm", definition: "Milice populaire allemande de derni\u00e8re minute (1944\u20131945), compos\u00e9e d\u2019adolescents et de vieillards mobilis\u00e9s pour d\u00e9fendre le Reich." }
+    ]
+  },
+  {
+    emoji: "💀",
+    categorie: "Guerre d\u2019an\u00e9antissement",
+    termes: [
+      { terme: "Bombardement strat\u00e9gique", definition: "Bombardement de zones urbaines visant \u00e0 d\u00e9truire l\u2019infrastructure industrielle et \u00e0 briser le moral des civils (Dresde, Tokyo, Hiroshima)." },
+      { terme: "U-boote", definition: "Sous-marins allemands mena\u00e7ant le ravitaillement britannique et le transport de troupes am\u00e9ricaines dans l\u2019Atlantique." },
+      { terme: "Crime de guerre", definition: "Violation grave des lois et coutumes de la guerre (massacre de prisonniers, torture, ciblage de civils)." },
+      { terme: "Crime contre l\u2019humanit\u00e9", definition: "Cat\u00e9gorie juridique fond\u00e9e \u00e0 Nuremberg (1945)\u00a0: actes inhumains commis contre des populations civiles en temps de guerre ou de paix." }
+    ]
+  },
+  {
+    emoji: "\u2721",
+    categorie: "La Shoah",
+    termes: [
+      { terme: "Shoah", definition: "\u00ab\u00a0Catastrophe\u00a0\u00bb en h\u00e9breu \u2014 g\u00e9nocide des Juifs d\u2019Europe par le r\u00e9gime nazi\u00a0: 6\u00a0millions de victimes (2/3 des Juifs d\u2019Europe)." },
+      { terme: "G\u00e9nocide", definition: "Destruction d\u00e9lib\u00e9r\u00e9e et syst\u00e9matique, avec l\u2019intention de les an\u00e9antir, d\u2019un groupe national, ethnique, racial ou religieux." },
+      { terme: "Ghetto", definition: "Quartier ferm\u00e9 d\u2019une ville occup\u00e9e o\u00f9 les nazis contraignaient les Juifs \u00e0 vivre dans des conditions inhumaines (surpeuplement, famine, \u00e9pid\u00e9mies)." },
+      { terme: "Solution finale", definition: "Terme nazi d\u00e9signant le plan d\u2019extermination syst\u00e9matique des 11\u00a0millions de Juifs d\u2019Europe, organis\u00e9 \u00e0 la conf\u00e9rence de Wannsee (20\u00a0janv.\u00a01942)." },
+      { terme: "Einsatzgruppen", definition: "\u00ab\u00a0Groupes d\u2019intervention\u00a0\u00bb de la SS charg\u00e9s de fusiller les Juifs, Tziganes et commissaires politiques en URSS\u00a0: 1,5\u00a0million de victimes (Shoah par balles)." },
+      { terme: "Camp d\u2019extermination", definition: "Centre de mise \u00e0 mort industrielle par chambres \u00e0 gaz et fours cr\u00e9matoires (Auschwitz-Birkenau, Treblinka, Sobibor, Chelmno, Majdanek, Belzec)." },
+      { terme: "Sonderkommando", definition: "D\u00e9tenus juifs contraints par les SS d\u2019assister aux gazages et d\u2019incin\u00e9rer les corps dans les cr\u00e9matoires, sous peine de mort." },
+      { terme: "D\u00e9portation", definition: "Transfert forc\u00e9 par trains de marchandises vers les camps de concentration ou d\u2019extermination." }
+    ]
+  },
+  {
+    emoji: "\u2696",
+    categorie: "Justice et m\u00e9moire",
+    termes: [
+      { terme: "Proc\u00e8s de Nuremberg", definition: "Proc\u00e8s (nov.\u00a01945 \u2013 oct.\u00a01946) organis\u00e9 par les Alli\u00e9s pour juger 24\u00a0dirigeants nazis\u00a0; 12\u00a0condamnations \u00e0 mort\u00a0; fonde la justice p\u00e9nale internationale." },
+      { terme: "Porajmos", definition: "\u00ab\u00a0D\u00e9voration\u00a0\u00bb en romani \u2014 g\u00e9nocide des Tziganes par le r\u00e9gime nazi\u00a0: environ 250\u00a0000\u00a0victimes." },
+      { terme: "Capitulation", definition: "Acte militaire par lequel un \u00c9tat reconna\u00eet sa d\u00e9faite et cesse les combats (Allemagne\u00a0: 8\u00a0mai\u00a01945\u00a0; Japon\u00a0: 2\u00a0sept.\u00a01945)." },
+      { terme: "Conf\u00e9rence de Yalta", definition: "R\u00e9union (f\u00e9vr.\u00a01945) de Churchill, Roosevelt et Staline pour organiser la fin de la guerre et d\u00e9finir les grandes lignes de l\u2019Europe d\u2019apr\u00e8s-guerre." }
+    ]
+  }
+];
+
+const VOCAB_PAR_PARTIES = [
+  {
+    termes: [
+      { terme: "Blitzkrieg", definition: "Strat\u00e9gie de \u00ab\u00a0guerre \u00e9clair\u00a0\u00bb (chars + aviation) qui permet \u00e0 l\u2019Allemagne ses victoires rapides de 1939\u20131941." },
+      { terme: "Axe", definition: "Alliance militaire entre l\u2019Allemagne nazie, l\u2019Italie fasciste et le Japon imp\u00e9rial." },
+      { terme: "Alli\u00e9s", definition: "Coalition oppos\u00e9e \u00e0 l\u2019Axe\u00a0: France et Royaume-Uni (1939), URSS (1941), \u00c9tats-Unis (1941)." },
+      { terme: "Dr\u00f4le de guerre", definition: "P\u00e9riode (sept.\u00a01939 \u2013 mai\u00a01940) de relative inaction franco-britannique derri\u00e8re la ligne Maginot." },
+      { terme: "Pacte germano-sovi\u00e9tique", definition: "Accord de non-agression sign\u00e9 le 23\u00a0ao\u00fbt\u00a01939 entre Hitler et Staline, incluant un plan secret de partage de la Pologne." },
+      { terme: "Bombe atomique", definition: "Arme nucl\u00e9aire utilis\u00e9e par les \u00c9tats-Unis sur Hiroshima (6\u00a0ao\u00fbt\u00a01945) et Nagasaki (9\u00a0ao\u00fbt\u00a01945) pour forcer la capitulation japonaise." }
+    ]
+  },
+  {
+    termes: [
+      { terme: "Guerre totale", definition: "Mobilisation de l\u2019ensemble de la soci\u00e9t\u00e9 et de l\u2019\u00e9conomie au service de l\u2019effort de guerre." },
+      { terme: "Propagande", definition: "Communication visant \u00e0 mobiliser les populations et diaboliser l\u2019ennemi." },
+      { terme: "STO", definition: "Service du Travail Obligatoire\u00a0: 600\u00a0000 \u00e0 650\u00a0000\u00a0Fran\u00e7ais envoy\u00e9s de force travailler en Allemagne (1942\u20131944)." },
+      { terme: "Bombardement strat\u00e9gique", definition: "Bombardements de villes civiles pour briser l\u2019\u00e9conomie et le moral de l\u2019ennemi (Dresde, Hiroshima)." },
+      { terme: "\u00c9conomie de guerre", definition: "Reconversion de l\u2019industrie civile vers la production d\u2019armements en masse." }
+    ]
+  },
+  {
+    termes: [
+      { terme: "Shoah", definition: "\u00ab\u00a0Catastrophe\u00a0\u00bb\u00a0: g\u00e9nocide des Juifs d\u2019Europe \u2014 6\u00a0millions de victimes." },
+      { terme: "Ghetto", definition: "Quartier ferm\u00e9 o\u00f9 les Juifs sont confin\u00e9s dans des conditions inhumaines (Varsovie, Lodz, Cracovie\u2026)." },
+      { terme: "Solution finale", definition: "Plan nazi d\u2019extermination de tous les Juifs d\u2019Europe, d\u00e9cid\u00e9 \u00e0 Wannsee (20\u00a0janv.\u00a01942)." },
+      { terme: "Einsatzgruppen", definition: "Unit\u00e9s mobiles SS charg\u00e9es de fusiller Juifs et Tziganes en URSS (Shoah par balles, 1,5\u00a0million de victimes)." },
+      { terme: "Camp d\u2019extermination", definition: "Centre de mise \u00e0 mort industrielle (chambres \u00e0 gaz + cr\u00e9matoires)\u00a0: Auschwitz-Birkenau, Treblinka, Sobibor\u2026" },
+      { terme: "G\u00e9nocide", definition: "Destruction d\u00e9lib\u00e9r\u00e9e d\u2019un groupe humain dans l\u2019intention de l\u2019an\u00e9antir \u2014 crime jug\u00e9 \u00e0 Nuremberg." }
+    ]
+  }
+];
+
+const DATES = [
+  {
+    emoji: "🔴",
+    titre: "Les victoires de l\u2019Axe (1939\u20131941)",
+    dates: [
+      { date: "23 ao\u00fbt 1939",           evenement: "Pacte germano-sovi\u00e9tique \u2014 partage secret de la Pologne" },
+      { date: "1er sept. 1939",         evenement: "Invasion de la Pologne par la Wehrmacht \u2014 d\u00e9but de la SGM" },
+      { date: "3 sept. 1939",           evenement: "La France et le Royaume-Uni d\u00e9clarent la guerre \u00e0 l\u2019Allemagne" },
+      { date: "Sept. 1939 \u2013 mai 1940", evenement: "La \u00ab\u00a0dr\u00f4le de guerre\u00a0\u00bb \u2014 attente franco-britannique derri\u00e8re la ligne Maginot" },
+      { date: "10 mai 1940",            evenement: "Offensive allemande \u00e0 l\u2019Ouest\u00a0: Belgique, Pays-Bas, Luxembourg" },
+      { date: "22 juin 1940",           evenement: "Armistice franco-allemand sign\u00e9 \u00e0 Rethondes \u2014 effondrement de la France" },
+      { date: "Automne 1940",           evenement: "Bataille d\u2019Angleterre\u00a0: le \u00ab\u00a0Blitz\u00a0\u00bb \u2014 \u00e9chec de l\u2019invasion allemande" }
+    ]
+  },
+  {
+    emoji: "🟠",
+    titre: "La mondialisation du conflit (1941)",
+    dates: [
+      { date: "22 juin 1941",    evenement: "Op\u00e9ration Barbarossa\u00a0: invasion de l\u2019URSS par l\u2019Allemagne" },
+      { date: "\u00c9t\u00e9\u2013automne 1941", evenement: "Einsatzgruppen en URSS \u2014 d\u00e9but de la Shoah par balles" },
+      { date: "7 d\u00e9c. 1941",     evenement: "Attaque japonaise de Pearl Harbor \u2014 entr\u00e9e en guerre des \u00c9tats-Unis" },
+      { date: "20 janv. 1942",   evenement: "Conf\u00e9rence de Wannsee \u2014 d\u00e9cision de la \u00ab\u00a0Solution finale\u00a0\u00bb" }
+    ]
+  },
+  {
+    emoji: "🟡",
+    titre: "Le tournant de la guerre (1942\u20131943)",
+    dates: [
+      { date: "Juin 1942",       evenement: "Victoire am\u00e9ricaine de Midway contre le Japon (Pacifique)" },
+      { date: "Oct.\u2013nov. 1942",  evenement: "Victoire alli\u00e9e \u00e0 El-Alamein (\u00c9gypte) + d\u00e9barquement en Afrique du Nord" },
+      { date: "2 f\u00e9vr. 1943",    evenement: "Capitulation allemande \u00e0 Stalingrad \u2014 tournant majeur sur le Front de l\u2019Est" },
+      { date: "Juil. 1943",      evenement: "Bataille de Koursk \u2014 \u00e9chec de la derni\u00e8re offensive allemande \u00e0 l\u2019Est" }
+    ]
+  },
+  {
+    emoji: "🟢",
+    titre: "Le recul de l\u2019Axe et la victoire alli\u00e9e (1943\u20131945)",
+    dates: [
+      { date: "Juil. 1943",    evenement: "D\u00e9barquement alli\u00e9 en Sicile puis en Italie" },
+      { date: "6 juin 1944",   evenement: "D\u00e9barquement en Normandie (D-Day) \u2014 ouverture du front Ouest" },
+      { date: "15 ao\u00fbt 1944", evenement: "D\u00e9barquement alli\u00e9 en Provence" },
+      { date: "25 ao\u00fbt 1944", evenement: "Lib\u00e9ration de Paris" },
+      { date: "8 mai 1945",    evenement: "Capitulation de l\u2019Allemagne nazie \u2014 fin de la guerre en Europe" },
+      { date: "6 ao\u00fbt 1945",  evenement: "Bombe atomique sur Hiroshima (\u223880\u00a0000\u00a0morts instantan\u00e9s)" },
+      { date: "9 ao\u00fbt 1945",  evenement: "Bombe atomique sur Nagasaki" },
+      { date: "2 sept. 1945",  evenement: "Capitulation du Japon \u2014 fin de la Seconde Guerre mondiale" }
+    ]
+  },
+  {
+    emoji: "\u2721",
+    titre: "Le g\u00e9nocide des Juifs et des Tziganes",
+    dates: [
+      { date: "D\u00e8s 1939",        evenement: "Cr\u00e9ation des premiers ghettos en Pologne occup\u00e9e (Varsovie, Lodz, Cracovie\u2026)" },
+      { date: "Juin 1941",       evenement: "D\u00e9but des op\u00e9rations des Einsatzgruppen en URSS \u2014 Shoah par balles" },
+      { date: "20 janv. 1942",   evenement: "Conf\u00e9rence de Wannsee \u2014 organisation de la \u00ab\u00a0Solution finale\u00a0\u00bb" },
+      { date: "1942\u20131944",       evenement: "D\u00e9portations massives vers Auschwitz-Birkenau, Treblinka, Sobibor, Belzec\u2026" },
+      { date: "19 avr. 1943",    evenement: "Soul\u00e8vement du ghetto de Varsovie, \u00e9cras\u00e9 par les SS (16\u00a0mai\u00a01943)" },
+      { date: "27 janv. 1945",   evenement: "Lib\u00e9ration d\u2019Auschwitz par l\u2019Arm\u00e9e rouge" },
+      { date: "Nov. 1945 \u2013 oct. 1946", evenement: "Proc\u00e8s de Nuremberg\u00a0: 12\u00a0condamnations \u00e0 mort" }
+    ]
+  }
+];
+
+const PERSONNAGES = [
+  {
+    nom: "Adolf Hitler",
+    dates: "1889\u20131945",
+    description: "F\u00fchrer de l\u2019Allemagne nazie. D\u00e9clenche la SGM par l\u2019invasion de la Pologne (1939) et ordonne la mise en \u0153uvre de la Shoah. Se suicide le 30\u00a0avril\u00a01945 dans son bunker berlinois avant la prise de Berlin par l\u2019Arm\u00e9e rouge."
+  },
+  {
+    nom: "Winston Churchill",
+    dates: "1874\u20131965",
+    description: "Premier ministre britannique (1940\u20131945). Symbole de la r\u00e9sistance du Royaume-Uni face \u00e0 l\u2019Axe. Refuse l\u2019armistice apr\u00e8s la d\u00e9faite fran\u00e7aise et mobilise l\u2019opinion par ses discours. Participe aux conf\u00e9rences des Alli\u00e9s (Yalta, Potsdam)."
+  },
+  {
+    nom: "Joseph Staline",
+    dates: "1878\u20131953",
+    description: "Dirigeant de l\u2019URSS. Signe le pacte germano-sovi\u00e9tique (1939) puis devient le chef de la r\u00e9sistance sovi\u00e9tique apr\u00e8s l\u2019op\u00e9ration Barbarossa (juin\u00a01941). L\u2019URSS subit les pertes humaines les plus lourdes du conflit (27\u00a0millions de morts)."
+  },
+  {
+    nom: "Franklin D. Roosevelt",
+    dates: "1882\u20131945",
+    description: "Pr\u00e9sident des \u00c9tats-Unis. Engage le pays aux c\u00f4t\u00e9s des Alli\u00e9s apr\u00e8s Pearl Harbor (d\u00e9c.\u00a01941) et fait des USA l\u2019\u00ab\u00a0arsenal de la d\u00e9mocratie\u00a0\u00bb. Participe \u00e0 la conf\u00e9rence de Yalta (f\u00e9vr.\u00a01945). D\u00e9c\u00e8de le 12\u00a0avril\u00a01945, un mois avant la victoire en Europe."
+  },
+  {
+    nom: "Harry Truman",
+    dates: "1884\u20131972",
+    description: "Successeur de Roosevelt \u00e0 la pr\u00e9sidence am\u00e9ricaine (avril\u00a01945). D\u00e9cide de larguer les bombes atomiques sur Hiroshima (6\u00a0ao\u00fbt) et Nagasaki (9\u00a0ao\u00fbt\u00a01945) pour contraindre le Japon \u00e0 capituler, mettant fin \u00e0 la SGM."
+  },
+  {
+    nom: "Heinrich Himmler",
+    dates: "1900\u20131945",
+    description: "Chef de la SS et de la Gestapo, principal architecte de la Shoah. Supervise les Einsatzgruppen et ordonne la construction des camps d\u2019extermination. Charg\u00e9 par Hitler de mettre en \u0153uvre la \u00ab\u00a0Solution finale\u00a0\u00bb."
+  },
+  {
+    nom: "Primo Levi",
+    dates: "1919\u20131987",
+    description: "Chimiste et \u00e9crivain juif italien, d\u00e9port\u00e9 \u00e0 Auschwitz en 1944. Son t\u00e9moignage \u00ab\u00a0Si c\u2019est un homme\u00a0\u00bb (1947) est un texte fondateur de la m\u00e9moire de la Shoah, d\u00e9crivant la d\u00e9shumanisation syst\u00e9matique dans les camps."
+  },
+  {
+    nom: "Mar\u00e9chal P\u00e9tain",
+    dates: "1856\u20131951",
+    description: "H\u00e9ros de la Premi\u00e8re Guerre mondiale, chef du gouvernement fran\u00e7ais en juin\u00a01940\u00a0: demande l\u2019armistice le 17\u00a0juin et le signe le 22\u00a0juin\u00a01940. Chef de l\u2019\u00c9tat fran\u00e7ais (r\u00e9gime de Vichy), dont des fonctionnaires collabor\u00e8rent \u00e0 la d\u00e9portation des Juifs."
+  }
+];
+
+function buildPlan() {
+  const grid = document.getElementById("plan-cards-grid");
+  if (!grid) return;
+  grid.innerHTML = "";
+  const n = Math.min(NB_PARTIES, PARTIES.length);
+  for (let i = 0; i < n; i++) {
+    const p = PARTIES[i], color = PLAN_COLORS[i];
+    const card = document.createElement("div");
+    card.className = "card";
+    card.style.borderColor = color;
+    card.innerHTML =
+      "<div class=\"plan-card-header\">" +
+        "<div class=\"plan-card-icon\" style=\"background:" + color + "\">" + p.roman + "</div>" +
+        "<h3 class=\"plan-card-title\" style=\"color:" + color + "\">" + p.titre + "</h3>" +
+      "</div>" +
+      "<div class=\"plan-card-content\"><p>" + p.description + "</p></div>";
+    grid.appendChild(card);
+  }
+}
+
+function buildBilan() {
+  const c = document.getElementById("bilan-aspects");
+  if (!c) return;
+  c.innerHTML = "";
+  for (let i = 0; i < Math.min(NB_PARTIES, PARTIES.length); i++) {
+    const p = PARTIES[i];
+    c.innerHTML += "<h5>" + p.bilan_titre + "</h5><p>" + p.bilan_texte + "</p>";
+  }
+}
+
+function buildCompetences() {
+  const grid = document.getElementById("competences-grid");
+  if (!grid) return;
+  grid.innerHTML = "";
+  COMPETENCES.forEach(function(cat) {
+    const card = document.createElement("div");
+    card.className = "card";
+    const items = cat.items.map(function(i) { return "<li>" + i + "</li>"; }).join("");
+    card.innerHTML =
+      "<div class=\"competences-title\">" + cat.emoji + " " + cat.titre + "</div>" +
+      "<ul class=\"list-styled\">" + items + "</ul>";
+    grid.appendChild(card);
+  });
+}
+
+function buildVocabThematique() {
+  const grid = document.getElementById("vocab-thematique-grid");
+  if (!grid) return;
+  grid.innerHTML = "";
+  const colors = ["#3b82f6","#27ae60","#8e44ad","#e74c3c","#f39c12"];
+  VOCAB_THEMATIQUE.forEach(function(cat, idx) {
+    const color = colors[idx % colors.length];
+    const card = document.createElement("div");
+    card.className = "card";
+    card.style.borderColor = color;
+    const items = cat.termes.map(function(t) {
+      return "<li><span class=\"vocab-term\" style=\"color:" + color + "\">" + t.terme + "\u00a0:</span>" +
+             "<span class=\"vocab-definition\"> " + t.definition + "</span></li>";
+    }).join("");
+    card.innerHTML =
+      "<div class=\"vocab-category-title\" style=\"color:" + color + "\">" + cat.emoji + " " + cat.categorie + "</div>" +
+      "<ul class=\"list-styled\">" + items + "</ul>";
+    grid.appendChild(card);
+  });
+}
+
+function buildVocabParties() {
+  const grid = document.getElementById("vocab-parties-grid");
+  if (!grid) return;
+  grid.innerHTML = "";
+  const n = Math.min(NB_PARTIES, PARTIES.length, VOCAB_PAR_PARTIES.length);
+  for (let i = 0; i < n; i++) {
+    const partie = PARTIES[i], vocab = VOCAB_PAR_PARTIES[i], color = PLAN_COLORS[i];
+    const card = document.createElement("div");
+    card.className = "card";
+    card.style.borderColor = color;
+    const items = vocab.termes.map(function(t) {
+      return "<li><span class=\"vocab-term\" style=\"color:" + color + "\">" + t.terme + "\u00a0:</span>" +
+             "<span class=\"vocab-definition\"> " + t.definition + "</span></li>";
+    }).join("");
+    card.innerHTML =
+      "<div class=\"vocab-category-title\" style=\"color:" + color + "\">" + partie.roman + " \u2014 " + partie.titre + "</div>" +
+      "<ul class=\"list-styled\">" + items + "</ul>";
+    grid.appendChild(card);
+  }
+}
+
+function switchVocabTab(tab, btn) {
+  document.querySelectorAll(".vocab-tab-content").forEach(function(el) { el.classList.remove("active"); });
+  document.querySelectorAll(".vocab-tab-btn").forEach(function(el) { el.classList.remove("active"); });
+  document.getElementById("vocab-tab-" + tab).classList.add("active");
+  btn.classList.add("active");
+}
+
+function buildDates() {
+  const c = document.getElementById("dates-content");
+  if (!c) return;
+  c.innerHTML = "";
+  DATES.forEach(function(periode) {
+    const items = periode.dates.map(function(d) {
+      return "<li><span class=\"date-major\">" + d.date + "</span><span class=\"date-event\"> \u2014 " + d.evenement + "</span></li>";
+    }).join("");
+    c.innerHTML +=
+      "<div class=\"dates-highlight-box\">" +
+        "<h4>" + periode.emoji + " " + periode.titre + "</h4>" +
+        "<ul class=\"list-styled\">" + items + "</ul>" +
+      "</div>";
+  });
+}
+
+function buildPersonnages() {
+  const grid = document.getElementById("personnages-grid");
+  if (!grid) return;
+  grid.innerHTML = "";
+  PERSONNAGES.forEach(function(p) {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML =
+      "<div class=\"personnages-title\">" + p.nom + "</div>" +
+      "<div class=\"personnages-dates\">" + p.dates + "</div>" +
+      "<div class=\"personnages-content\">" + p.description + "</div>";
+    grid.appendChild(card);
+  });
+}
+
+var isDarkTheme = false;
+var currentFontSize = 16;
+
+function toggleTheme() {
+  isDarkTheme = !isDarkTheme;
+  document.body.dataset.theme = isDarkTheme ? "dark" : "";
+  document.querySelector(".btn-theme").textContent = isDarkTheme ? "\u2600\ufe0f Clair" : "🌙 Sombre";
+  showNotification(isDarkTheme ? "Mode sombre activ\u00e9" : "Mode clair activ\u00e9");
+}
+
+function changeFontSize() {
+  var sizes = [14,16,18,20,22];
+  var names = ["Petit","Normal","Grand","Tr\u00e8s grand","Extra grand"];
+  var idx = (sizes.indexOf(currentFontSize) + 1) % sizes.length;
+  currentFontSize = sizes[idx];
+  document.body.style.fontSize = currentFontSize + "px";
+  showNotification("Taille\u00a0: " + names[idx]);
+}
+
+function showNotification(message) {
+  var ex = document.querySelector(".notification");
+  if (ex) ex.remove();
+  var n = document.createElement("div");
+  n.className = "notification";
+  n.textContent = message;
+  document.body.appendChild(n);
+  setTimeout(function() {
+    n.style.animation = "slideIn 0.3s ease-in reverse";
+    setTimeout(function() { n.remove(); }, 300);
+  }, 2000);
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  buildPlan();
+  buildBilan();
+  buildCompetences();
+  buildDates();
+  buildPersonnages();
+  buildVocabThematique();
+  buildVocabParties();
+});
+</script>
+</body>
+</html>
